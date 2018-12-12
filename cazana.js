@@ -94,15 +94,15 @@
 
   function calculateAverageNumberOfMilesAddedPerDay() {
     for (let i = 0; i < 4; i++) {
-      let date1 = new Date(history[5 - i].date);
-      let date2 = new Date(history[5 - i - 1].date);
+      let date1 = new Date(history[history.length - 1 - i].date);
+      let date2 = new Date(history[history.length - 1 - i - 1].date);
       let numberOfDaysBetweenTwoDates = calculateDaysBetweenTwoDates(
         date1,
         date2
       );
 
-      let mileage1 = history[5 - i].data.mileage;
-      let mileage2 = history[5 - i - 1].data.mileage;
+      let mileage1 = history[history.length - 1 - i].data.mileage;
+      let mileage2 = history[history.length - 1 - i - 1].data.mileage;
       let numberOfMilesDrivenSinceLastMOT = mileage2 - mileage1;
 
       let averageNumberOfMilesAddedPerDay;
